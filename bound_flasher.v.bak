@@ -44,7 +44,7 @@ always@(state, flick, led)
 					if (count > 0)
 						begin
 							led[count] = 1'b0;
-							count<= count -1;
+							count--;
 							next_state = STATE_INIT;
 						end
 					else
@@ -56,7 +56,7 @@ always@(state, flick, led)
 					if (count < 5)
 						begin
 							led[count] = 1'b1;
-							count<= count +1;
+							count++;
 							next_state = STATE_ON_0TO5;
 						end
 					else
@@ -65,9 +65,9 @@ always@(state, flick, led)
 				
 			STATE_OFF_5TO0:
 				begin
-					
+					if (count )
+				end
 					
 				end
-		 endcase
 	end
 endmodule
