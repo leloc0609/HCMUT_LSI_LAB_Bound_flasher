@@ -1,6 +1,6 @@
 module clock_divider(clk, rst,clk_out);
 	input clk, rst;
-	output clk_out;
+	output reg clk_out;
 
 	reg [27:0]counter;
 	initial counter=0;
@@ -9,7 +9,7 @@ module clock_divider(clk, rst,clk_out);
 	begin
 		if (rst == 0)
 		begin
-			counter <= 0;
+			counter <= 1'b0;
 		end
 		else
 		begin

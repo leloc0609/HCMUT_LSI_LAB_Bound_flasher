@@ -1,4 +1,4 @@
-module bound_flasher(clk, rst_n, flick, led);
+module bound_flasher(clk, rst_n, count_in, flick, count_out, led);
 
 parameter MAX_LED = 16;
 parameter STATE_INIT 		= 3'b000;
@@ -8,20 +8,18 @@ parameter STATE_ON_0TO10 	= 3'b011;
 parameter STATE_OFF_10TO5 	= 3'b100;
 parameter STATE_ON_5TO15 	= 3'b101;
 	
-input clk, rst_n, flick;
-output reg led [MAX_LED-1:0];
+input wire clk, rst_n, [3:0 ]count_in,flick;
+output reg [MAX_LED-1:0] led;
+output reg [3:0] count_out; 
 
-wire clk, rst_n, flick; 
-reg [3:0] count;
-
-// Inner vars
 reg [2:0] state;
 reg [2:0] next_state;
 reg [MAX_LED-1:0] next_led;
 
-initial count = 4'b0000;
+
 initial led = 16'd0;
 initial next_led = 16'd0;
+
 
 always@(posedge clk, negedge rst_n)
 	begin
@@ -44,7 +42,7 @@ always@(state, flick, led)
 					if (count > 0)
 						begin
 							led[count] = 1'b0;
-							count<= count -1;
+							count= count -1;
 							next_state = STATE_INIT;
 						end
 					else

@@ -1,0 +1,5 @@
+module main(clk, rst_counter,rst_divider, rst_n, flick, led);
+	input clk, rst_counter,rst_divider, rst_n, flick;
+	output led;
+	
+endmodule 

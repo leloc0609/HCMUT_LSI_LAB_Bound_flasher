@@ -1,0 +1,23 @@
+|bound_flasher
+clk => state~1.DATAIN
+rst_n => state~3.DATAIN
+flick => next_state.DATAA
+flick => next_state.DATAA
+led[0] <= led[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= led[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= led[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[3] <= led[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[4] <= led[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[5] <= led[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[6] <= led[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[7] <= led[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[8] <= led[8]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[9] <= led[9]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[10] <= led[10]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[11] <= led[11]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[12] <= led[12]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[13] <= led[13]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[14] <= led[14]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[15] <= led[15]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab_LSI
-Thu Apr 14 16:57:37 2022
+Thu Apr 14 23:03:18 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -11,6 +11,7 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
   5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -36,10 +37,10 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                             ;
 +-----------------------------+--------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu Apr 14 16:57:37 2022          ;
+; Analysis & Synthesis Status ; Failed - Thu Apr 14 23:03:18 2022          ;
 ; Quartus II 64-Bit Version   ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name               ; Lab_LSI                                    ;
-; Top-level Entity Name       ; Lab_LSI                                    ;
+; Top-level Entity Name       ; bound_flasher                              ;
 ; Family                      ; Cyclone V                                  ;
 ; Logic utilization (in ALMs) ; N/A until Partition Merge                  ;
 ; Total registers             ; N/A until Partition Merge                  ;
@@ -57,7 +58,7 @@ applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEBA6U23I7       ;                    ;
-; Top-level entity name                                                           ; Lab_LSI            ; Lab_LSI            ;
+; Top-level entity name                                                           ; bound_flasher      ; Lab_LSI            ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone IV GX      ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
@@ -155,19 +156,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu Apr 14 16:57:36 2022
+    Info: Processing started: Thu Apr 14 23:03:18 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab_LSI -c Lab_LSI
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file bound_flasher.v
     Info (12023): Found entity 1: bound_flasher
 Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.v
     Info (12023): Found entity 1: clock_divider
-Error (10773): Verilog HDL error at bound_flasher.v(12): declaring module ports or function arguments with unpacked array types requires SystemVerilog extensions File: D:/HK212 LSI/Lab_LSI/bound_flasher.v Line: 12
-Error (10048): Verilog HDL error at bound_flasher.v(23): values cannot be assigned directly to all or part of array "led" - assignments must be made to individual elements only File: D:/HK212 LSI/Lab_LSI/bound_flasher.v Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file counter.v
+    Info (12023): Found entity 1: counter
+Error (10137): Verilog HDL Procedural Assignment error at bound_flasher.v(61): object "count" on left-hand side of assignment must have a variable data type File: D:/HK212 LSI/Lab_LSI/bound_flasher.v Line: 61
+Error (10137): Verilog HDL Procedural Assignment error at bound_flasher.v(73): object "count" on left-hand side of assignment must have a variable data type File: D:/HK212 LSI/Lab_LSI/bound_flasher.v Line: 73
+Info (144001): Generated suppressed messages file D:/HK212 LSI/Lab_LSI/output_files/Lab_LSI.map.smsg
 Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 4646 megabytes
-    Error: Processing ended: Thu Apr 14 16:57:37 2022
-    Error: Elapsed time: 00:00:01
+    Error: Peak virtual memory: 4645 megabytes
+    Error: Processing ended: Thu Apr 14 23:03:18 2022
+    Error: Elapsed time: 00:00:00
     Error: Total CPU time (on all processors): 00:00:00
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/HK212 LSI/Lab_LSI/output_files/Lab_LSI.map.smsg.
 
 

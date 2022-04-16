@@ -1,0 +1,6 @@
+
+State Machine - |bound_flasher|state
+Name state.STATE_INIT state.STATE_OFF_5TO0 state.STATE_ON_0TO5 
+state.STATE_INIT 0 0 0 
+state.STATE_ON_0TO5 1 0 1 
+state.STATE_OFF_5TO0 1 1 0 
