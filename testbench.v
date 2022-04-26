@@ -68,9 +68,14 @@ begin
 //	flick = 0;
 //	
 //	
-	#1000 $stop;
+	#1000 
+	$finish;
 end
 
+initial begin
+  $recordfile ("waves");
+  $recordvars ("depth=0", testbench);
+end
 
 
 
