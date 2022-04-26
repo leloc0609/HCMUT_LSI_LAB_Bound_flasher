@@ -83,14 +83,11 @@ begin
 		
 		end
 		
-		
 		else if(operation == IDLE) begin
 		
 			N <= N;
 		
 		end
-		
-		
 		
 		else begin
 		

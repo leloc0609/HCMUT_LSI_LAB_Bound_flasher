@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab_LSI
-Thu Apr 14 23:03:18 2022
+Tue Apr 26 08:17:10 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -10,8 +10,16 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Flash_bounder|state
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |Flash_bounder
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +42,27 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                             ;
-+-----------------------------+--------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu Apr 14 23:03:18 2022          ;
-; Quartus II 64-Bit Version   ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
-; Revision Name               ; Lab_LSI                                    ;
-; Top-level Entity Name       ; bound_flasher                              ;
-; Family                      ; Cyclone V                                  ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                  ;
-; Total registers             ; N/A until Partition Merge                  ;
-; Total pins                  ; N/A until Partition Merge                  ;
-; Total virtual pins          ; N/A until Partition Merge                  ;
-; Total block memory bits     ; N/A until Partition Merge                  ;
-; Total PLLs                  ; N/A until Partition Merge                  ;
-; Total DLLs                  ; N/A until Partition Merge                  ;
-+-----------------------------+--------------------------------------------+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++---------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Apr 26 08:17:10 2022      ;
+; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                   ; Lab_LSI                                    ;
+; Top-level Entity Name           ; Flash_bounder                              ;
+; Family                          ; Cyclone V                                  ;
+; Logic utilization (in ALMs)     ; N/A                                        ;
+; Total registers                 ; 38                                         ;
+; Total pins                      ; 19                                         ;
+; Total virtual pins              ; 0                                          ;
+; Total block memory bits         ; 0                                          ;
+; Total DSP Blocks                ; 0                                          ;
+; Total HSSI RX PCSs              ; 0                                          ;
+; Total HSSI PMA RX Deserializers ; 0                                          ;
+; Total HSSI TX PCSs              ; 0                                          ;
+; Total HSSI TX Channels          ; 0                                          ;
+; Total PLLs                      ; 0                                          ;
+; Total DLLs                      ; 0                                          ;
++---------------------------------+--------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -58,7 +71,7 @@ applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEBA6U23I7       ;                    ;
-; Top-level entity name                                                           ; bound_flasher      ; Lab_LSI            ;
+; Top-level entity name                                                           ; Flash_bounder      ; Lab_LSI            ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone IV GX      ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
@@ -150,34 +163,182 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                       ;
++----------------------------------+-----------------+------------------------+--------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path         ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------+---------+
+; Flash_bounder.v                  ; yes             ; User Verilog HDL File  ; D:/HK212 LSI/Lab_LSI/Flash_bounder.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 61        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 105       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 17        ;
+;     -- 5 input functions                    ; 8         ;
+;     -- 4 input functions                    ; 9         ;
+;     -- <=3 input functions                  ; 71        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 38        ;
+;                                             ;           ;
+; I/O pins                                    ; 19        ;
+; Total DSP Blocks                            ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 38        ;
+; Total fan-out                               ; 504       ;
+; Average fan-out                             ; 2.78      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                       ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
+; |Flash_bounder             ; 105 (105)         ; 38 (38)      ; 0                 ; 0          ; 19   ; 0            ; |Flash_bounder      ; work         ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Flash_bounder|state                                                                                                    ;
++---------------------+---------------------+-------------------+-------------------+-------------------+--------------------+------------+
+; Name                ; state.FOUR_TO_FTEEN ; state.OFF_TO_FOUR ; state.ZERO_TO_TEN ; state.OFF_TO_ZERO ; state.ZERO_TO_FIVE ; state.INIT ;
++---------------------+---------------------+-------------------+-------------------+-------------------+--------------------+------------+
+; state.INIT          ; 0                   ; 0                 ; 0                 ; 0                 ; 0                  ; 0          ;
+; state.ZERO_TO_FIVE  ; 0                   ; 0                 ; 0                 ; 0                 ; 1                  ; 1          ;
+; state.OFF_TO_ZERO   ; 0                   ; 0                 ; 0                 ; 1                 ; 0                  ; 1          ;
+; state.ZERO_TO_TEN   ; 0                   ; 0                 ; 1                 ; 0                 ; 0                  ; 1          ;
+; state.OFF_TO_FOUR   ; 0                   ; 1                 ; 0                 ; 0                 ; 0                  ; 1          ;
+; state.FOUR_TO_FTEEN ; 1                   ; 0                 ; 0                 ; 0                 ; 0                  ; 1          ;
++---------------------+---------------------+-------------------+-------------------+-------------------+--------------------+------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 38    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 38    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 31    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; N[31]                                   ; 23      ;
+; N[0]                                    ; 13      ;
+; N[3]                                    ; 18      ;
+; N[19]                                   ; 2       ;
+; N[6]                                    ; 2       ;
+; N[5]                                    ; 2       ;
+; N[4]                                    ; 2       ;
+; N[12]                                   ; 2       ;
+; N[11]                                   ; 2       ;
+; N[10]                                   ; 2       ;
+; N[9]                                    ; 2       ;
+; N[8]                                    ; 2       ;
+; N[7]                                    ; 2       ;
+; N[18]                                   ; 2       ;
+; N[17]                                   ; 2       ;
+; N[16]                                   ; 2       ;
+; N[15]                                   ; 2       ;
+; N[14]                                   ; 2       ;
+; N[13]                                   ; 2       ;
+; N[30]                                   ; 2       ;
+; N[29]                                   ; 2       ;
+; N[28]                                   ; 2       ;
+; N[27]                                   ; 2       ;
+; N[26]                                   ; 2       ;
+; N[25]                                   ; 2       ;
+; N[24]                                   ; 2       ;
+; N[23]                                   ; 2       ;
+; N[22]                                   ; 2       ;
+; N[21]                                   ; 2       ;
+; N[20]                                   ; 2       ;
+; N[2]                                    ; 19      ;
+; N[1]                                    ; 15      ;
+; Total number of inverted registers = 32 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Flash_bounder|N[18]       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Flash_bounder ;
++----------------+--------+-----------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                ;
++----------------+--------+-----------------------------------------------------+
+; IDLE           ; 00     ; Unsigned Binary                                     ;
+; UP             ; 01     ; Unsigned Binary                                     ;
+; DOWN           ; 10     ; Unsigned Binary                                     ;
+; KICK_BACK      ; 11     ; Unsigned Binary                                     ;
+; INIT           ; 000001 ; Unsigned Binary                                     ;
+; ZERO_TO_FIVE   ; 000010 ; Unsigned Binary                                     ;
+; OFF_TO_ZERO    ; 000100 ; Unsigned Binary                                     ;
+; ZERO_TO_TEN    ; 001000 ; Unsigned Binary                                     ;
+; OFF_TO_FOUR    ; 010000 ; Unsigned Binary                                     ;
+; FOUR_TO_FTEEN  ; 100000 ; Unsigned Binary                                     ;
+; SIZE           ; 6      ; Signed Integer                                      ;
++----------------+--------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu Apr 14 23:03:18 2022
+    Info: Processing started: Tue Apr 26 08:17:09 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab_LSI -c Lab_LSI
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file bound_flasher.v
-    Info (12023): Found entity 1: bound_flasher
-Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.v
-    Info (12023): Found entity 1: clock_divider
-Info (12021): Found 1 design units, including 1 entities, in source file counter.v
-    Info (12023): Found entity 1: counter
-Error (10137): Verilog HDL Procedural Assignment error at bound_flasher.v(61): object "count" on left-hand side of assignment must have a variable data type File: D:/HK212 LSI/Lab_LSI/bound_flasher.v Line: 61
-Error (10137): Verilog HDL Procedural Assignment error at bound_flasher.v(73): object "count" on left-hand side of assignment must have a variable data type File: D:/HK212 LSI/Lab_LSI/bound_flasher.v Line: 73
-Info (144001): Generated suppressed messages file D:/HK212 LSI/Lab_LSI/output_files/Lab_LSI.map.smsg
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 4645 megabytes
-    Error: Processing ended: Thu Apr 14 23:03:18 2022
-    Error: Elapsed time: 00:00:00
-    Error: Total CPU time (on all processors): 00:00:00
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in D:/HK212 LSI/Lab_LSI/output_files/Lab_LSI.map.smsg.
+Info (12021): Found 1 design units, including 1 entities, in source file flash_bounder.v
+    Info (12023): Found entity 1: Flash_bounder
+Info (12127): Elaborating entity "Flash_bounder" for the top level hierarchy
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 124 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 105 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4682 megabytes
+    Info: Processing ended: Tue Apr 26 08:17:10 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
