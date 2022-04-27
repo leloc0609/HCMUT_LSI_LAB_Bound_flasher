@@ -2,6 +2,13 @@
 
 # HCMUT-VLSI-Lab: Bound flasher 
 
+## Team member:
+This project is proudly done by:
+* [Le Nguyen Tan Loc](https://github.com/leloc0609)
+* [Nguyen Van Quang](https://github.com/quangnguyen310)
+* [Vu Hoang Hai](https://github.com/DaTha7)
+* [Nguyen Le Thao Vy](https://github.com/vy-nguyenlethao0510)
+* [Nguyen Ly Dang Khoa](https://github.com/Khoabk) <br />
 ## System specification:
   **Expected outcome:** A 16-bit LEDs system that functions accurately as specified below.<br /><br />
    The system operates based on three input signals and produces one output signal:
@@ -62,6 +69,6 @@ For illustrative purpose, images of typical workflow are attached below:
 |Decoder |This block’s work is to convert the value of N into appropriate output LED display|
 
 ### State machine
-
+<img src="https://github.com/leloc0609/HCMUT_Lab_LSI_Bound_flasher/blob/master/img/fsm.png"> 
 
 
