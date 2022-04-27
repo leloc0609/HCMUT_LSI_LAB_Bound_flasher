@@ -31,3 +31,37 @@ For illustrative purpose, images of typical workflow are attached below:
 
 ## Internal implementation:
 
+### Overall
+
+<img src="https://github.com/leloc0609/HCMUT_Lab_LSI_Bound_flasher/blob/master/img/block_diagram.png"> 
+<br />
+<br />
+
+**Data path of Block diagram description:** <br />
+| Signal       |Width          |Type  | Description|
+| :-------------:|:-------------:| :-----:|:-----|
+| CLK |1 |Input |Used to trigger the sequential blocks.|
+| RST |1 |Input |Used to reset the system.
+| FLICK |1 |Input | If the signal is high when the last turned on LED is at the kick back point the module returns to it’s previous state.|
+| LED |16 |Output |Output signal will be connected to LED.|
+|STATE |3 |Reg |Used to keep track of the current state of the module.|
+|NEXT_STATE |3| Reg |Used to keep track of the next state.|
+|N |32| Integer| Used to turn on or off LED, also involves in deciding the next state of the module.|
+|Operation| 2 |Reg| Deciding whether to increment or decrement N or keep it unchanged in the next clock cycle.|
+<br />
+<br />
+
+**Components of Block diagram description:** <br />
+
+|Block| Description|
+|:----:|:----------|
+|Change_state|The block has three input signals NEXT_STATE, CLK, RST. It simply transfers the NEXT_STATE input signal to the current state when CLK goes high, If RST is low the output is assigned to INIT.|
+|Logic| This block’s output is the operation signal, which is determined by the flick signal, the current state and the value of N.|
+|Operation on N| This block performs either increment, decrement or to keep the value of N unchanged over clock cycle based on the value of operation input signal.|
+|FSM |This block decides the next state of the machine, it relies on three input signals such as FLICK, STATE and OPERATION to make the decision|
+|Decoder |This block’s work is to convert the value of N into appropriate output LED display|
+
+### State machine
+
+
+
