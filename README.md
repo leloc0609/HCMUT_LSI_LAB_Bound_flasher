@@ -22,6 +22,12 @@ the flasher will function according to the following steps:
     - The lamps are turned ON gradually from lamp[5] to lamp[15].
     - Finally, the lamps are turned OFF gradually from lamp[15] to lamp[0], return to initial state.
     
-* Additional condition: At each kickback point (lamp[5] and lamp[10]), if flick signal is ACTIVE, the lamps will turn OFF gradually again to the min lamp of the previous state, then continue operation as above description. For simplicity, kickback point is considered only when the lamps are turned ON gradually, except the first state.
-– For illustrative purpose, images of typical workflow are attached below:
+* **Additional condition:** At each kickback point (lamp[5] and lamp[10]), if flick signal is ACTIVE, the lamps will turn OFF gradually again to the min lamp of the previous state, then continue operation as above description. For simplicity, kickback point is considered only when the lamps are turned ON gradually, except the first state. <br /><br />
+
+For illustrative purpose, images of typical workflow are attached below:
+
+<img src="https://github.com/leloc0609/HCMUT_Lab_LSI_Bound_flasher/blob/master/img/workflow_1.png"> <br />
+<img src="https://github.com/leloc0609/HCMUT_Lab_LSI_Bound_flasher/blob/master/img/workflow_2.png"> <br />
+
+## Internal implementation:
 
